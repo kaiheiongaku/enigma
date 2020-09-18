@@ -4,14 +4,22 @@ require './lib/characters'
 class CharactersTest < Minitest::Test
 
   def test_it_exists_and_has_a_set
-    character = Characters.new
+    characters = Characters.new
 
-    assert_instance_of Characters, character
+    assert_instance_of Characters, characters
     expected = ["a", "b", "c", "d", "e", "f",
                 "g", "h", "i", "j", "k", "l",
                 "m", "n", "o", "p", "q", "r",
                 "s", "t", "u", "v", "w", "x",
                 "y", "z", " "]
-    assert_equal expected,character.set
+    assert_equal expected,characters.set
+  end
+
+  def test_rotate_character
+    characters = Characters.new
+
+    assert_equal "b", characters.rotate_character("a", 1)
+    assert_equal "a", characters.rotate_character("a", 27)
+    assert_equal "d", characters.rotate_character("l", 73)
   end
 end
