@@ -1,5 +1,3 @@
-require './lib/characters'
-
 class Offset
   attr_reader :offset_a,
               :offset_b,
@@ -17,6 +15,4 @@ class Offset
   def square_date
     (@date.to_i ** 2).to_s
   end
-
-
 end

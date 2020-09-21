@@ -1,5 +1,4 @@
 require './test/test_helper'
-require './lib/characters'
 require './lib/offset'
 
 class OffsetTest < Minitest::Test

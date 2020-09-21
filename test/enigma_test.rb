@@ -24,9 +24,17 @@ class EnigmaTest < Minitest::Test
     assert_equal 6, enigma.date.length
   end
 
+  def test_it_creates_shifts_when_given_key_and_date
+    enigma = Enigma.new
+    enigma.encrypt("hello world", "02715", "040895")
+
+    assert_equal 15, enigma.create_shifts
+  end
+
 
   # def test_encrypt_that_puppy
   #   enigma = Enigma.new
+  #   enigma.encrypt("hello world", "02715", "040895")
   #   assert_equal "keder ohulw", enigma.encrypted_message
   # end
 
