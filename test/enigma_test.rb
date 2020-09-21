@@ -17,6 +17,17 @@ class EnigmaTest < Minitest::Test
     assert_equal "040895", enigma.date
   end
 
+  def test_generate_hash_without_message_encrypted
+    enigma = Enigma.new
+
+    expected = ({ encryption: "hello world",
+                         key: "02715",
+                        date: "040895"
+                          })
+    actual = enigma.encrypt("hello world", "02715", "040895")
+    assert_equal expected, actual
+  end
+
   # def test_encrypt_that_puppy
   #   enigma = Enigma.new
   #   actual = enigma.encrypt_that_puppy("hello world", "02715", "040895")

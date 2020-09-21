@@ -6,14 +6,14 @@ class Enigma
               :date
 
   def encrypt(message, key, date)
-    encrypt_hash = {}
+    normal_hash = {}
     @message = message
     @key = key
     @date = date
-    # encrypt_hash[:encryption] = message.encrypt_that_puppy
-    # encrypt_hash[:key] = @key
-    # encrypt_hash[:date] = @date
-    # encrypt_hash
+    normal_hash[:encryption] = message
+    normal_hash[:key] = @key
+    normal_hash[:date] = @date
+    normal_hash
   end
 
 
