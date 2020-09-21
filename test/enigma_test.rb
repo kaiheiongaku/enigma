@@ -28,7 +28,10 @@ class EnigmaTest < Minitest::Test
     enigma = Enigma.new
     enigma.encrypt("hello world", "02715", "040895")
 
-    assert_equal 15, enigma.create_shifts
+    assert_equal 3, enigma.create_shifts.shift_a
+    assert_equal 27, enigma.create_shifts.shift_b
+    assert_equal 73, enigma.create_shifts.shift_c
+    assert_equal 20, enigma.create_shifts.shift_d
   end
 
 

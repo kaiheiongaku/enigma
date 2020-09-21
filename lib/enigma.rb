@@ -24,8 +24,6 @@ class Enigma
 
   def create_shifts
     @shift = Shift.new(@key, @date)
-    require 'pry'; binding.pry
-
   end
 
   # def encrypt_that_puppy
