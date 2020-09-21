@@ -43,11 +43,11 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, enigma.message_array
   end
 
-  def create_character_set
+  def test_create_character_set
     enigma = Enigma.new
     enigma.encrypt("hello world", "02715", "040895")
 
-    assert_equal 27, enigma.create_character_set.set
+    assert_equal 27, enigma.create_character_set.set.length
   end
 
   # def test_rotate_letters
