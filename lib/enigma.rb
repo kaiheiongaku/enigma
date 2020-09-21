@@ -1,5 +1,6 @@
 require 'date'
 require './lib/shift'
+require './lib/characters'
 
 class Enigma
   attr_reader :message,
@@ -26,9 +27,20 @@ class Enigma
     @shift = Shift.new(@key, @date)
   end
 
-  # def encrypt_that_puppy
-  #   create_shifts(@key, @date)
-  #   make the message into an array of characters using .chars
+  def message_array
+    @message.chars
+  end
+
+  def create_character_set
+    characters = Characters.new
+  end
+
+  # def rotate_letters
+  #   message_array.each do |letter|
+
+
+
+# def test_encrypt_that_puppy
   #   iterate through them, rotating every 4th
   # end
 

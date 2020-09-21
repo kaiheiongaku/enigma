@@ -34,6 +34,30 @@ class EnigmaTest < Minitest::Test
     assert_equal 20, enigma.create_shifts.shift_d
   end
 
+  def test_message_array
+    enigma = Enigma.new
+    enigma.encrypt("hello world", "02715", "040895")
+
+    expected = ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"]
+
+    assert_equal expected, enigma.message_array
+  end
+
+  def create_character_set
+    enigma = Enigma.new
+    enigma.encrypt("hello world", "02715", "040895")
+
+    assert_equal 27, enigma.create_character_set.set
+  end
+
+  # def test_rotate_letters
+  #   enigma = Enigma.new
+  #   enigma.encrypt("hello world", "02715", "040895")
+  #
+  #   expected = "keder ohulw"
+  #   assert_equal expected, enigma.rotate_letters
+  # end
+
 
   # def test_encrypt_that_puppy
   #   enigma = Enigma.new
