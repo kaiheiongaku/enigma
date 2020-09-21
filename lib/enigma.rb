@@ -3,18 +3,27 @@ require 'date'
 class Enigma
   attr_reader :message,
               :key,
-              :date
+              :date,
+              :encrypted_message
 
-  def encrypt(message, key, date)
-    normal_hash = {}
+  def encrypt(message,
+              key = rand(1000..9999).to_s.prepend('0'),
+              date = (Time.new).strftime("%d%m%y"))
+    encrypted_hash = {}
     @message = message
     @key = key
     @date = date
-    normal_hash[:encryption] = message
-    normal_hash[:key] = @key
-    normal_hash[:date] = @date
-    normal_hash
+    @encrypted_message
+    encrypted_hash[:encryption] = @message.encrypt_that_puppy
+    encrypted_hash[:key] = @key
+    encrypted_hash[:date] = @date
+    encrypted_hash
   end
+
+  def encrypt_that_puppy
+    create_shift
+  end
+
 
 
 
