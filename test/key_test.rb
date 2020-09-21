@@ -10,14 +10,6 @@ class KeyTest < Minitest::Test
     assert_instance_of Key, key1
   end
 
-  def test_it_creates_random_number
-    key1 = Key.new("09867")
-
-    # key1.stubs(:randomized_number).returns("09867")
-
-    assert_equal "09867", key1.key
-  end
-
   def test_does_it_create_keys_when_key_is_given
     key1 = Key.new("09867")
 
@@ -36,5 +28,4 @@ class KeyTest < Minitest::Test
     assert_equal 2, key1.key_c.length
     assert_equal 2, key1.key_d.length
   end
-
 end

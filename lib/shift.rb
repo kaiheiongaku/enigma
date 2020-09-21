@@ -5,13 +5,13 @@ require './lib/offset'
 class Shift
   attr_reader :keys, :offsets
 
-  def initialize(date)
-    create_keys
+  def initialize(key = rand(1000..9999).to_s.prepend('0'), date)
+    create_keys(key)
     create_offsets(date)
   end
 
-  def create_keys
-    @keys = Key.new
+  def create_keys(key)
+    @keys = Key.new(key)
   end
 
   def create_offsets(date)
