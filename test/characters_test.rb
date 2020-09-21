@@ -22,4 +22,11 @@ class CharactersTest < Minitest::Test
     assert_equal "a", characters.rotate_character("a", 27)
     assert_equal "d", characters.rotate_character("l", 73)
   end
+
+  def test_inclusion_of_character
+    characters = Characters.new
+
+    assert_equal "!", characters.rotate_character("!", 2)
+    assert_equal "b", characters.rotate_character("a", 1)
+  end
 end
