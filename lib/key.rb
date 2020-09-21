@@ -3,14 +3,13 @@ class Key
               :key_b,
               :key_c,
               :key_d,
-              :randomized_number
+              :key
 
-  def initialize
-    @randomized_number = rand(1000..9999).to_s.prepend('0')
-    @key_a = @randomized_number[0,2]
-    @key_b = @randomized_number[1,2]
-    @key_c = @randomized_number[2,2]
-    @key_d = @randomized_number[3,2]
+  def initialize(key = rand(1000..9999).to_s.prepend('0'))
+    @key = key
+    @key_a = @key[0,2]
+    @key_b = @key[1,2]
+    @key_c = @key[2,2]
+    @key_d = @key[3,2]
   end
-
 end
