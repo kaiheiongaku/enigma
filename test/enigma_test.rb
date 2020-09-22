@@ -82,10 +82,7 @@ class EnigmaTest < Minitest::Test
 
   def test_encrypts_with_no_date_and_no_key
     enigma = Enigma.new
-    expected_hash = ({ encryption: "keder ohulw",
-                         key: "02715",
-                        date: "040895"
-                        })
+    
     actual = enigma.encrypt("hello world")
     assert_equal true, actual.include?(:encryption)
     assert_equal true, actual.include?(:key)
@@ -96,7 +93,6 @@ class EnigmaTest < Minitest::Test
     enigma = Enigma.new
     enigma.decrypt("kyzeg kiokm", "02715")
 
-
-    assert_equal "210920", enigma.date
+    assert_equal "220920", enigma.date
   end
 end
