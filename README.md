@@ -1,1 +1,13 @@
 # enigma
+
+Version Control: Throughout this project, I committed often and after working on small bits of functionality. There were a few times when the commits included more than one method, but they almost always included related functionality or helper methods. The initial pull request was much later than what should have been done. I was concerned about keeping the main branch 'pristine' because the initial part of the Enigma class ended up being more involved than I expected. In hindsight, I should have started with the outer methods and worked my way in. I have 44 commits and 6 pull requests, so I would give myself somewhere just above a 3 for this category.
+
+Test Driven Development: My work flow generally includes forming the test and then coding the method.  I initially tried to use stubs for the random generators but had a very difficult time getting them to pass, resulting in outright stubbing the result being tested. I eventually changed a lot of those tests to include more roundabout ways of testing, like using length and checking that the key started with a 0, for instance.  I could have more successfully integrated mocks and stubs. Every method is tested in some way, even if the test checks for a dependency. Rake tells me that I have 100% coverage. I would give myself a low 2 on this.
+
+Ruby Conventions and Mechanics: Barring the occasional typo, code is indented appropriately. All file names follow convention. The enumerables I used are the only ones possible. I ended up manipulating the strings rather than converting into an array and back into a string. There are two hashes, decrypt and encrypt, as required in the specification. I would give myself a 2 on this.
+
+Object Oriented Programming: I can articulate the single responsibility for each class. Knowledge is limited. However, this and the conventions are definitely my weakest points. I had a clear structure in my head when I started, but I became less convinced as the project evolved.  I stayed with my initial structure but feel that some things would be easier if the would be combined. The structure is overcomplicated. I would give myself a 2 on this.
+
+Functionality: The command line functionality is there for both encrypt and decrypt.  The runners function, but the .txt files have a bit of Google translate syndrome--in so much as they aren't perfectly swapping back and forth. The message is correct with the correct key and date. However, there are breaklines and escape characters in places that are not intended.  Because of that, I would give myself a 2.9 in this category.
+
+Overall, I would give myself a low to mid 2.
