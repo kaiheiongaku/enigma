@@ -12,10 +12,6 @@ class ShiftTest < Minitest::Test
 
   def test_it_can_add_keys_and_offsets
     shift = Shift.new("09867", "032986")
-    # shift.stubs(:shift_a).returns(15)
-    # shift.stubs(:shift_b).returns(99)
-    # shift.stubs(:shift_c).returns(95)
-    # shift.stubs(:shift_d).returns(73)
 
     assert_equal 2, shift.keys.key_a.length
     assert_equal "6", shift.offsets.offset_a
