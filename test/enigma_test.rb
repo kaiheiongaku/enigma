@@ -47,33 +47,26 @@ class EnigmaTest < Minitest::Test
     enigma = Enigma.new
     enigma.encrypt("hello world", "02715", "040895")
 
-    assert_equal 27, enigma.create_character_set.set.length
+    assert_equal 27, enigma.character_set.set.length
   end
 
-  # def test_rotate_letters
-  #   enigma = Enigma.new
-  #   enigma.encrypt("hello world", "02715", "040895")
-  #
-  #   expected = "keder ohulw"
-  #   assert_equal expected, enigma.rotate_letters
-  # end
+  def test_rotate_letters
+    enigma = Enigma.new
+    enigma.encrypt("hello world", "02715", "040895")
 
+    expected = "keder ohulw"
+    assert_equal expected, enigma.rotate_letters
+  end
 
-  # def test_encrypt_that_puppy
-  #   enigma = Enigma.new
-  #   enigma.encrypt("hello world", "02715", "040895")
-  #   assert_equal "keder ohulw", enigma.encrypted_message
-  # end
-
-  # def test_encrypt
-  #   enigma = Enigma.new
-  #   expected = ({ encryption: "keder ohulw",
-  #                        key: "02715",
-  #                       date: "040895"
-  #                       })
-  #   actual = enigma.encrypt("hello world", "02715", "040895")
-  #   assert_equal expected, actual
-  # end
+  def test_encrypt
+    enigma = Enigma.new
+    expected = ({ encryption: "keder ohulw",
+                         key: "02715",
+                        date: "040895"
+                        })
+    actual = enigma.encrypt("hello world", "02715", "040895")
+    assert_equal expected, actual
+  end
 
 
 
