@@ -59,6 +59,36 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, actual
   end
 
+  def test_rotate_letters_backwards
+    enigma = Enigma.new
+    enigma.decrypt("keder ohulw", "02715", "040895")
 
+    expected = "hello world"
+    actual = enigma.rotate_letters_backwards
+    assert_equal expected, actual
+  end
 
+  def test_decrypt
+    enigma = Enigma.new
+    expected = ({
+    decryption: "hello world",
+    key: "02715",
+    date: "040895"
+    })
+    actual = enigma.decrypt("keder ohulw", "02715", "040895")
+
+    assert_equal expected, actual
+  end
+
+  def test_encrypts_with_no_date_and_no_key
+    enigma = Enigma.new
+    expected_hash = ({ encryption: "keder ohulw",
+                         key: "02715",
+                        date: "040895"
+                        })
+    actual = enigma.encrypt("hello world")
+    assert_equal true, actual.include?(:encryption)
+    assert_equal true, actual.include?(:key)
+    assert_equal true, actual.include?(:date)
+  end
 end
