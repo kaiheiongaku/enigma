@@ -54,7 +54,7 @@ class Enigma
     encrypted_message
   end
 
-  def decrypt(message, key, date)
+  def decrypt(message, key, date = (Time.new).strftime("%d%m%y"))
     decrypted_hash = {}
     @message = message
     @key = key
