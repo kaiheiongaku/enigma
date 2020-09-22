@@ -91,4 +91,12 @@ class EnigmaTest < Minitest::Test
     assert_equal true, actual.include?(:key)
     assert_equal true, actual.include?(:date)
   end
+
+  def test_decrypts_using_todays_date
+    enigma = Enigma.new
+    enigma.decrypt("kyzeg kiokm", "02715")
+
+
+    assert_equal "210920", enigma.date
+  end
 end
