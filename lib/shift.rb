@@ -1,4 +1,3 @@
-require './lib/characters'
 require './lib/key'
 require './lib/offset'
 

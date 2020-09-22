@@ -14,10 +14,9 @@ class Enigma
               date = (Time.new).strftime("%d%m%y"))
     encrypted_hash = {}
     @message = message
-    @encrypted_message = ""
     @key = key
     @date = date
-    encrypted_hash[:encryption] = @encrypted_message
+    encrypted_hash[:encryption] = rotate_letters
     encrypted_hash[:key] = @key
     encrypted_hash[:date] = @date
     encrypted_hash
@@ -25,10 +24,6 @@ class Enigma
 
   def create_shifts
     @shift = Shift.new(@key, @date)
-  end
-
-  def message_array
-    @message.chars
   end
 
   def character_set
@@ -39,23 +34,24 @@ class Enigma
     create_shifts
     character_set
     starting_index = 0
+    encrypted_message = ""
     @message.each_char do |letter|
       index_number = @message.index(letter, starting_index)
       if index_number == 0 || index_number % 4 == 0
          starting_index += 1
-         @encrypted_message << character_set.rotate_character(letter, @shift.shift_a)
+         encrypted_message << character_set.rotate_character(letter, @shift.shift_a)
       elsif index_number == 0 || index_number % 4 == 1
          starting_index += 1
-         @encrypted_message << character_set.rotate_character(letter, @shift.shift_b)
+         encrypted_message << character_set.rotate_character(letter, @shift.shift_b)
       elsif index_number == 0 || index_number % 4 == 2
          starting_index += 1
-         @encrypted_message << character_set.rotate_character(letter, @shift.shift_c)
+         encrypted_message << character_set.rotate_character(letter, @shift.shift_c)
       elsif index_number == 0 || index_number % 4 == 3
         starting_index += 1
-        @encrypted_message << character_set.rotate_character(letter, @shift.shift_d)
+        encrypted_message << character_set.rotate_character(letter, @shift.shift_d)
       end
     end
-    @encrypted_message
+    encrypted_message
   end
 
 end
