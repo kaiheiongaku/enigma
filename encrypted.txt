@@ -1,0 +1,1 @@
+{:encryption=>"\"Tabkpmq k qbkfqimr.iTucbkvuidugiaggadvqw.\"\n", :key=>"03402", :date=>"220920"}
