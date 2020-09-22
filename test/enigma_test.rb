@@ -79,4 +79,16 @@ class EnigmaTest < Minitest::Test
 
     assert_equal expected, actual
   end
+
+  def test_encrypts_with_no_date_and_no_key
+    enigma = Enigma.new
+    expected_hash = ({ encryption: "keder ohulw",
+                         key: "02715",
+                        date: "040895"
+                        })
+    actual = enigma.encrypt("hello world")
+    assert_equal true, actual.include?(:encryption)
+    assert_equal true, actual.include?(:key)
+    assert_equal true, actual.include?(:date)
+  end
 end
